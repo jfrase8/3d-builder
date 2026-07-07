@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_context7_context7__resolve-library-id",
+      "PowerShell($go = \\(Get-Command go -ErrorAction SilentlyContinue\\).Source; if \\(-not $go\\) { $c = \"$env:ProgramFiles\\\\Go\\\\bin\\\\go.exe\"; if \\(Test-Path $c\\) { $env:Path += \";$env:ProgramFiles\\\\Go\\\\bin\"; $go = $c } }; if \\(-not $go\\) { \"GO_NOT_FOUND\" } else { & go version; Set-Location \"c:\\\\Users\\\\jfras\\\\OneDrive\\\\Documents\\\\VS Repos\\\\3d-builder\\\\backend\"; & go mod tidy; if \\($?\\) { \"---BUILD---\"; & go build ./... ; if \\($?\\) { \"BUILD_OK\" } } })",
+      "PowerShell(Set-Location \"c:\\\\Users\\\\jfras\\\\OneDrive\\\\Documents\\\\VS Repos\\\\3d-builder\\\\frontend\"; & npx vite build 2>&1 | Select-Object -Last 20; \"EXIT=$LASTEXITCODE\")",
+      "PowerShell(npm view react version)",
+      "PowerShell(npm view react-dom version)",
+      "PowerShell(npm view @react-three/fiber version)",
+      "PowerShell(npm view @react-three/fiber peerDependencies --json)",
+      "PowerShell(npm view @react-three/drei version)",
+      "PowerShell(\"---R3F---\")",
+      "PowerShell(\"---DREI---\")",
+      "PowerShell(Set-Location \"c:\\\\Users\\\\jfras\\\\OneDrive\\\\Documents\\\\VS Repos\\\\3d-builder\\\\frontend\"; & npm install 2>&1 | Select-Object -Last 8; \"---TSC---\"; & npx tsc -b 2>&1 | Select-Object -First 40; \"TSC_EXIT=$LASTEXITCODE\")",
+      "PowerShell(Set-Location \"c:\\\\Users\\\\jfras\\\\OneDrive\\\\Documents\\\\VS Repos\\\\3d-builder\\\\frontend\"; Remove-Item -Recurse -Force node_modules, package-lock.json -ErrorAction SilentlyContinue; & npm install 2>&1 | Select-Object -Last 8; \"EXIT=$LASTEXITCODE\")",
+      "PowerShell(Set-Location \"c:\\\\Users\\\\jfras\\\\OneDrive\\\\Documents\\\\VS Repos\\\\3d-builder\\\\frontend\"; & npx tsc -b 2>&1 | Select-Object -First 40; \"TSC_EXIT=$LASTEXITCODE\"; \"---VITE---\"; & npx vite build 2>&1 | Select-String -Pattern \"error|built|transformed\" | Select-Object -First 10; \"VITE_EXIT=$LASTEXITCODE\")",
+      "PowerShell(Set-Location \"c:\\\\Users\\\\jfras\\\\OneDrive\\\\Documents\\\\VS Repos\\\\3d-builder\\\\frontend\"; & npx tsc -b 2>&1 | Select-Object -First 20; \"EXIT=$LASTEXITCODE\")",
+      "PowerShell(Get-NetTCPConnection -LocalPort 8080 -State Listen -ErrorAction SilentlyContinue | ForEach-Object { $pr = Get-Process -Id $_.OwningProcess -ErrorAction SilentlyContinue; \"Killing PID $\\($_.OwningProcess\\) \\($\\($pr.ProcessName\\)\\)\"; Stop-Process -Id $_.OwningProcess -Force }; Start-Sleep -Milliseconds 400; if \\(Get-NetTCPConnection -LocalPort 8080 -State Listen -ErrorAction SilentlyContinue\\) { \"STILL IN USE\" } else { \"Port 8080 free\" })",
+      "PowerShell(Set-Location \"c:\\\\Users\\\\jfras\\\\OneDrive\\\\Documents\\\\VS Repos\\\\3d-builder\\\\frontend\"; & npm install 2>&1 | Select-Object -Last 3; \"---TSC---\"; & npx tsc -b 2>&1 | Select-Object -First 30; \"TSC_EXIT=$LASTEXITCODE\")",
+      "PowerShell(Set-Location \"c:\\\\Users\\\\jfras\\\\OneDrive\\\\Documents\\\\VS Repos\\\\3d-builder\\\\frontend\"; & npx vite build 2>&1 | Select-String -Pattern \"error|built|transformed\" | Select-Object -First 6; \"VITE_EXIT=$LASTEXITCODE\")",
+      "PowerShell(Set-Location \"c:\\\\Users\\\\jfras\\\\OneDrive\\\\Documents\\\\VS Repos\\\\3d-builder\\\\frontend\"; & npx tsc -b 2>&1 | Select-Object -First 30; \"TSC_EXIT=$LASTEXITCODE\")",
+      "PowerShell($env:Path += \";$env:ProgramFiles\\\\Go\\\\bin\"; Set-Location \"c:\\\\Users\\\\jfras\\\\OneDrive\\\\Documents\\\\VS Repos\\\\3d-builder\\\\backend\"; & go build ./...; \"BUILD_EXIT=$LASTEXITCODE\")"
+    ]
+  }
+}
