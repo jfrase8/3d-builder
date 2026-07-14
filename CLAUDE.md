@@ -6,8 +6,6 @@
 - Use targeted edits and partial diffs. NEVER rewrite an entire file for a localized change.
 - Stop when the task is done; do not offer unsolicited refactoring, abstractions, or next steps.
 
-# Architecture & Stack
-
 # Conventions & Constraints
 
 - Read existing files before writing or modifying them.
